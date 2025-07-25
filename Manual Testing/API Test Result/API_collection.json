@@ -1,0 +1,317 @@
+{
+	"info": {
+		"_postman_id": "be0cea6a-f2ba-431b-8070-f529dac5ad48",
+		"name": "Question No 4 Without Response",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44948425"
+	},
+	"item": [
+		{
+			"name": "Search Product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base URL}}search?keyword=Nike+react",
+					"host": [
+						"{{Base URL}}search"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "Nike+react"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Select a Product",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base URL}}women/nike-odyssey-react-flyknit-2-160",
+					"host": [
+						"{{Base URL}}women"
+					],
+					"path": [
+						"nike-odyssey-react-flyknit-2-160"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Select Product with Black color and Small Size",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base URL}}women/nike-odyssey-react-flyknit-2-160?color=14&size=25",
+					"host": [
+						"{{Base URL}}women"
+					],
+					"path": [
+						"nike-odyssey-react-flyknit-2-160"
+					],
+					"query": [
+						{
+							"key": "color",
+							"value": "14"
+						},
+						{
+							"key": "size",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add To Cart (Product Color Pink)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sku\": \"NJC93155-Pink-XL\",\r\n    \"qty\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base URL}}api/cart/mine/items",
+					"host": [
+						"{{Base URL}}api"
+					],
+					"path": [
+						"cart",
+						"mine",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add To Cart (Product Color Black With Size XL)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sku\": \"NJC93155-Black-XL\",\r\n    \"qty\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base URL}}api/cart/mine/items",
+					"host": [
+						"{{Base URL}}api"
+					],
+					"path": [
+						"cart",
+						"mine",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add To Cart (Product Color Black With Size S)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sku\": \"NJC93155-Black-S\",\r\n    \"qty\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base URL}}api/cart/mine/items",
+					"host": [
+						"{{Base URL}}api"
+					],
+					"path": [
+						"cart",
+						"mine",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "No error when  qty>=10 for black XL size",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sku\": \"NJC93155-Black-XL\",\r\n    \"qty\": 10\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base URL}}api/cart/mine/items",
+					"host": [
+						"{{Base URL}}api"
+					],
+					"path": [
+						"cart",
+						"mine",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Error when  qty>=7 for black small size",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sku\": \"NJC93155-Black-S\",\r\n    \"qty\": 7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base URL}}api/cart/mine/items",
+					"host": [
+						"{{Base URL}}api"
+					],
+					"path": [
+						"cart",
+						"mine",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove from Cart(Pink)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sku\": \"NJC93155-Pink-XL\",\r\n    \"qty\": 1\r\n}"
+				},
+				"url": {
+					"raw": "{{Base URL}}api/cart/fbe01847-776e-416e-88aa-b73f4c17bc95/items/f1c1e2c1-e8b5-4029-934a-049f2a9d430b",
+					"host": [
+						"{{Base URL}}api"
+					],
+					"path": [
+						"cart",
+						"fbe01847-776e-416e-88aa-b73f4c17bc95",
+						"items",
+						"f1c1e2c1-e8b5-4029-934a-049f2a9d430b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove From Cart(Black)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"sku\": \"NJC93155-Black-S\",\r\n    \"qty\": 1\r\n}"
+				},
+				"url": {
+					"raw": "{{Base URL}}api/cart/265212b7-2efd-4868-bac5-c9978d6795c8/items/3b6c661a-1d7c-4bce-a74e-dae4b39dc6ec",
+					"host": [
+						"{{Base URL}}api"
+					],
+					"path": [
+						"cart",
+						"265212b7-2efd-4868-bac5-c9978d6795c8",
+						"items",
+						"3b6c661a-1d7c-4bce-a74e-dae4b39dc6ec"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checkout",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base URL}}checkout",
+					"host": [
+						"{{Base URL}}checkout"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Base URL",
+			"value": "https://demo.evershop.io/",
+			"type": "string"
+		}
+	]
+}
